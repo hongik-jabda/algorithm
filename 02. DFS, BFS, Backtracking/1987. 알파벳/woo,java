@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class Main {
+	static int R, C;
+	static char[][] board;
+	static boolean[] visited;
+	static int maxCount = 0;
+
+	// 상하좌우 이동을 나타내는 배열. index별로 왼, 오, 아래, 위 나타냄
+	static int[] dx = {-1, 1, 0, 0};
+	static int[] dy = {0, 0, -1, -1};
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+
+		// 입력 처리
+		R = scanner.nextInt();
+		C = scanner.nextInt();
+		scanner.nextLine();	// 개행 문자 제거
+		board = new char[R][C];	// 보드 만들기
+		for (int i=0; i<R; i++) {
+			board[i] = scanner.nextLine().toCharArray();
+		}
+
+		// 알파벳 방문 배열 (AtoZ 총 26개)
+		visited = new boolean[26];
+
+		// 시작점 처리
+		visited[board[0][0] - 'A'] = true;
+		dfs(0, 0, 1);	// 좌측 상단에서 시작, 초기 칸 수 1
+
+		// 결과 출력
+		System.out.println(maxCount);	// 최대 이동 칸수 출력
+	}
+
+	// DFS를 이용한 탐색
+	public static void dfs(int x, int y, int count) {
+		maxCount = Math.max(maxCount, count);	// 최대칸수 갱신하여 찾기
+
+		// 상하좌우로 이동
+		for (int i=0; i<4; i++) {	// return이 필요없는 이유
+			int nx = x + dx[i];
+			int ny = y + dy[i];
+		
+			// 보드 범위 내에서만 이동
+			if (nx >= 0 && ny >= 0 && nx < R && ny < C) {
+				char nextChar = board[nx][ny];	// 이동한 알파벳
+				
+				// 새로운 알파벳이면 이동
+				if (!visited[nextChar - 'A']) {	// 가지치기의 핵심 조건
+					visited[nextChar - 'A'] = true;	// 해당 알파벳에 방문 표시
+					dfs(nx, ny, count+1);	// 이동 후 다음 단계 탐색
+					visited[nextChar - 'A'] = false;		// 다음 경로 탐색을 위한 초기화
+				}
+			}
+		}
+	}
+}
