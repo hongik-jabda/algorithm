@@ -12,8 +12,48 @@
 ## 예제2: 피보나치 수열 계산
 ![image](https://github.com/user-attachments/assets/6e285e86-1374-48b0-a330-50d9c33cb205)
 - return f(n) = f(n-1) + f(n-2); // 단순 재귀함수 호출
+```
+public class Fibonacci01 {
+    public static void main(String[] args) {
+        System.out.println(recur(26));
+    }
+
+    public static int recur(int num){
+        if(num == 1){
+            return 1;
+        }
+        if(num == 2){
+            return 1;
+        }
+        int result = recur(num-1) + recur(num-2);
+        return result;
+    }
+}
+```
 ![image](https://github.com/user-attachments/assets/da5a8dd9-e3d7-4895-94d2-50bd766e647d)
-- 밑에서부터 시작하면 중복 계산 줄일 수 있음
+- 밑에서부터 시작하면 중복 계산 줄일 수 있음(Top-Down도 DP 가능하긴 함!!!!)
+- 어쨌든 핵심은, 연산한 결과를 배열에 저장하는 것(메모리)
+```
+public class Fibonacci {
+    static int[] dp = new int[100];
+
+    public static void main(String[] args) {
+        System.out.println(fibo(26));
+    }
+
+    public static int fibo(int num){
+        //첫번째, 두번째 수열에 1 저장
+        dp[0] = 1;
+        dp[1] = 1;
+        
+        //반복문을 돌며 3번째 수열부터 차례로 값을 채워넣는다
+       for(int i = 2; i < num; i++){
+           dp[i] = dp[i - 1] + dp[i - 2];
+       }
+        return dp[num - 1];
+    }
+}
+```
 ## DP 문제인지 알아보는 법?
 1. DFS/BFS로 풀 수 있지만 경우의 수가 너무 많은 문제
   - 주로 DFS/BFS는 경로 탐색, DP는 최적값 계산에 적합
@@ -24,3 +64,4 @@
 - https://www.youtube.com/watch?v=0bqfTzpWySY
 - https://www.google.com/url?sa=i&url=https%3A%2F%2Fhongjw1938.tistory.com%2F47&psig=AOvVaw1cq79OREW7eP9vKKtqPCvE&ust=1735615370114000&source=images&cd=vfe&opi=89978449&ved=0CBcQjhxqFwoTCPDc1J_FzooDFQAAAAAdAAAAABAZ
 - https://www.google.com/url?sa=i&url=https%3A%2F%2Fvelog.io%2F%40ssokeem%2FDynamic-Programming&psig=AOvVaw1cq79OREW7eP9vKKtqPCvE&ust=1735615370114000&source=images&cd=vfe&opi=89978449&ved=0CBcQjhxqFwoTCPDc1J_FzooDFQAAAAAdAAAAABAh
+- https://eunjk.tistory.com/6
