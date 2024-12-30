@@ -5,6 +5,14 @@
 ## DP는 왜 필요한가?
 1. 메모리(기억, 유사 캐쉬)을 사용하여 중복 연산을 줄인다
 2. 중복 연산을 줄여 수행 시간을 줄인다.
+## DP의 두 가지 방식
+### 1. Tabulation(도표 작성)
+- bottom-up
+- 불필요한 계산까지도 포함할 가능성
+### 2. Memoization(기억)
+- top-down, 재귀 호출
+- 불필요한 계산 방지해주지만, 재귀 호출 깊이에 따라 StackOverflow 날 수도
+- 두 방식의 공통된 핵심은, **하위 문제의 결과를 저장하여 중복 계산을 피하는 것**
 ## 예제1: 정수 삼각형
 ![image](https://github.com/user-attachments/assets/436c3685-e53e-4ca9-b6d2-0708507040e9)
 - 원래였으면 처음부터 끝까지 계속해서 계산하여 max와 비교하는 방식 -> 중복 연산 발생
@@ -31,8 +39,8 @@ public class Fibonacci01 {
 }
 ```
 ![image](https://github.com/user-attachments/assets/da5a8dd9-e3d7-4895-94d2-50bd766e647d)
-- 밑에서부터 시작하면 중복 계산 줄일 수 있음(Top-Down도 DP 가능하긴 함!!!!)
-- 어쨌든 핵심은, 연산한 결과를 배열에 저장하는 것(메모리)
+- 밑에서부터 시작하면 중복 계산 줄일 수 있음(Tabulation 방식)
+- 어쨌든 핵심은, 연산한 결과를 배열에 저장하는 것
 ```
 public class Fibonacci {
     static int[] dp = new int[100];
