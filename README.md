@@ -8,4 +8,4 @@
 | 4주차 | [그리디](https://github.com/hongik-jabda/algorithm/blob/main/04.%20%EA%B7%B8%EB%A6%AC%EB%94%94/description.md)         | [11501](https://www.acmicpc.net/problem/11501), [1700](https://www.acmicpc.net/problem/1700) |
 | 5주차 | [DP](https://github.com/hongik-jabda/algorithm/blob/main/05.%20DP/description.md)         | [1463](https://www.acmicpc.net/problem/1463), [2098](https://www.acmicpc.net/problem/2098) |
 | 6주차 | [정렬](https://github.com/hongik-jabda/algorithm/blob/main/06.%20%EC%A0%95%EB%A0%AC%EA%B5%AC%ED%98%84/description.md)         | 정렬 함수 구현 |
-| 7주차 | [누적합](https://github.com/hongik-jabda/algorithm/blob/main/07.%20%EB%88%84%EC%A0%81%ED%95%A9/description.md)         | [파괴되지 않은 건물](https://school.programmers.co.kr/learn/courses/30/lessons/92344), [10986](https://www.acmicpc.net/problem/10986)|
+| 7주차 | [누적합](https://github.com/hongik-jabda/algorithm/blob/main/07.%20%EB%88%84%EC%A0%81%ED%95%A9/description.md)         | [P92344](https://school.programmers.co.kr/learn/courses/30/lessons/92344), [10986](https://www.acmicpc.net/problem/10986)|
