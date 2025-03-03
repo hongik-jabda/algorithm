@@ -11,4 +11,5 @@
 | 7주차 | [누적합](https://github.com/hongik-jabda/algorithm/blob/main/07.%20%EB%88%84%EC%A0%81%ED%95%A9/description.md)         | [P92344](https://school.programmers.co.kr/learn/courses/30/lessons/92344), [10986](https://www.acmicpc.net/problem/10986)|
 | 8주차 | [투포인터](https://github.com/hongik-jabda/algorithm/blob/main/08.%20%ED%88%AC%ED%8F%AC%EC%9D%B8%ED%84%B0/%EC%84%A4%EB%AA%85.md)         | [9024](https://www.acmicpc.net/problem/9024), [1644](https://www.acmicpc.net/problem/1644) |
 | 9주차 | 자유 과제         | [10942](https://www.acmicpc.net/problem/10942), [1949](https://www.acmicpc.net/problem/1949) |
+| 10주차 | 자유 과제         | [16953](https://www.acmicpc.net/problem/16953), [17136](https://www.acmicpc.net/problem/17136) |
 
