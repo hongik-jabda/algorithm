@@ -48,7 +48,8 @@ public class Main {
 		// 현재 위치가 0이거나 이미 방문한 경우, 다음 위치로 이동
 		if(board[r][c] == 0 || visit[r][c]) {
 			DFS(depth + 1, cnt);  // 다음 칸으로 이동
-		} else {
+		} 
+		else {
 			// 1x1 ~ 5x5 시도
 			for(int i = 1; i <= 5; i++) {
 				// 색종이를 붙일 수 있다면 시도
@@ -63,11 +64,10 @@ public class Main {
 	// 색종이를 붙이거나 제거하는 함수
 	// 시작위치(r, c), 색종이 크기(num x num), flag: true(붙이기) / false(제거)
 	static boolean check(int r, int c, int num, boolean flag) {
-		if(flag) {  // 색종이를 붙이는 경우
+		if(flag) {  // 색종이를 붙인다(flag)
 			// 해당 크기의 색종이를 모두 사용
 			if(paper[num - 1] == 5)
 				return false;
-      // 
 			for(int i = r; i < r + num; i++) {
 				for(int j = c; j < c + num; j++) {
 					// 범위를 벗어나거나 이미 방문했거나 1이 아닌 경우 불가능
@@ -77,7 +77,8 @@ public class Main {
 			}
 			// 사용한 색종이 개수 증가
 			paper[num - 1]++;
-		} else {  // 색종이를 제거하는 경우
+		} 
+		else {  // 색종이를 제거한다(flag)
 			paper[num - 1]--;
 		}
 
