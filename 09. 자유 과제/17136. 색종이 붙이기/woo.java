@@ -35,7 +35,7 @@ public class Main {
 		System.out.println(answer);
 	}
 
-	// depth: 현재 탐색 위치, cnt: 사용한 색종이 개수
+	// depth: 현재 탐색 위치, cnt: 사용한 전체 색종이 개수
 	static void DFS(int depth, int cnt) {
 		if(depth == 100) {  // board 전체 탐색시
 			answer = Math.min(answer, cnt);  // 최소 색종이 개수 갱신
